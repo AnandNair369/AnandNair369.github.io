@@ -2,378 +2,257 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Anand Nair</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anand Nair - Innovator in AI & Quantum Computing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Global Reset & Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* Custom Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    h1, h2, h3 {
-      margin-bottom: 20px;
-    }
-    
-    /* Header */
-    header {
-      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-      color: #fff;
-      padding: 18px 0;
-    }
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    header h1 {
-      font-size: 2rem;
-      font-weight: 600;
-    }
-    nav ul {
-      display: flex;
-      list-style: none;
-    }
-    nav ul li {
-      margin-left: 20px;
-    }
-    nav ul li a {
-      font-size: 1rem;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #f0f0f0;
-    }
-    
-    /* Section Headings */
-    section h2 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      position: relative;
-    }
-    section h2::after {
-      content: '';
-      width: 60px;
-      height: 3px;
-      background: #2575fc;
-      display: block;
-      margin: 10px auto 0;
-      border-radius: 5px;
-    }
-    
-    /* About Section */
-    #about {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      padding: 21px 0;
-    }
-    #about img {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #2575fc;
-    }
-    .about-content {
-      flex: 1;
-      text-align: left;
-    }
-    .about-content p {
-      margin-bottom: 15px;
-      font-size: 1.1rem;
-    }
-    
-    /* Research Section */
-    #research {
-      background: #fff;
-      padding: 60px 20px;
-    }
-    #research .research-content {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    #research .research-column {
-      flex: 1;
-      min-width: 300px;
-    }
-    #research .research-column h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: #2575fc;
-    }
-    #research ul {
-      list-style: disc;
-      margin-left: 20px;
-    }
-    #research ul li {
-      margin-bottom: 10px;
-      font-size: 1.1rem;
-      line-height: 1.5;
-    }
-    
-    /* Projects Section */
-    #projects {
-      background: #fff;
-      padding: 60px 20px;
-    }
-    .projects-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .project-card {
-      background: #f9f9f9;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    }
-    .project-card h3 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      color: #2575fc;
-    }
-    .project-card p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-    
-    /* Resume Section */
-    #resume {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    #resume p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
-    .btn {
-      display: inline-block;
-      background: #2575fc;
-      color: #fff;
-      padding: 12px 30px;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: background 0.3s, transform 0.3s;
-    }
-    .btn:hover {
-      background: #1a5fcc;
-      transform: translateY(-3px);
-    }
-    
-    /* Contact Section */
-    #contact {
-      background: #fff;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    #contact p {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-    }
-    #contact a {
-      color: #2575fc;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    #contact a:hover {
-      color: #1a5fcc;
-    }
-    
-    /* Footer */
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 15px 20px;
-      font-size: 0.9rem;
-    }
-    
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      header .container {
-        flex-direction: column;
-        text-align: center;
-      }
-      nav ul {
-        margin-top: 10px;
-        justify-content: center;
-      }
-      #about {
-        flex-direction: column;
-        text-align: center;
-      }
-      #about img {
-        margin: 0 auto;
-      }
-      #research .research-content {
-        flex-direction: column;
-        align-items: center;
-      }
-      #research .research-column {
-        margin-bottom: 30px;
-      }
-    }
+    .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
+    .hover-scale { transition: transform 0.3s ease; }
+    .hover-scale:hover { transform: scale(1.05); }
+
+    /* Smooth Scroll */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
-<body>
+<body class="bg-gray-100 font-poppins text-gray-800">
   <!-- Header -->
-  <header>
-    <div class="container">
-      <h1>Anand Nair</h1>
+  <header class="bg-gradient-to-r from-purple-600 to-blue-500 text-white shadow-lg">
+    <div class="container mx-auto px-6 py-6 flex justify-between items-center flex-wrap">
+      <h1 class="text-4xl font-bold">Anand Nair</h1>
       <nav>
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <ul class="flex space-x-6">
+          <li><a href="#about" class="hover:text-gray-200 transition">About</a></li>
+          <li><a href="#education" class="hover:text-gray-200 transition">Education</a></li>
+          <li><a href="#experience" class="hover:text-gray-200 transition">Experience</a></li>
+          <li><a href="#projects" class="hover:text-gray-200 transition">Projects</a></li>
+          <li><a href="#achievements" class="hover:text-gray-200 transition">Achievements</a></li>
+          <li><a href="#technologies" class="hover:text-gray-200 transition">Technologies</a></li>
+          <li><a href="#contact" class="hover:text-gray-200 transition">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  
-  <!-- About Section -->
-  <section id="about" class="container">
-    <img src="photo.jpg" alt="Anandhu Photo">
-    <div class="about-content">
-      <h2>About Me</h2>
-      <p>Hello, I'm Anand – a passionate Engineering student with a strong foundation in Computer Science, physics, and mathematics from the University of Nebraska-Lincoln. I thrive at the intersection of technology and research, working on innovative projects ranging from cosmic ray analysis to quantum simulation and advanced data processing.</p>
-      <p>My hands-on experience in research has shaped my technical expertise and creative problem-solving skills. I continually pursue opportunities that bridge academic research with real-world applications.</p>
-      <p>Beyond my passion for science and engineering, I am deeply inspired by portrait painting. I love exploring the nuances of human expression through art, drawing inspiration from masters like Gerhard Richter, Cecily Brown, and Takashi Murakami. My favorite artwork, <em>Master of Photorealism</em>, embodies the delicate balance between realism and creative expression that fuels my artistic side.</p>
+
+  <!-- Hero/About Section -->
+  <section id="about" class="bg-white py-20">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-10 animate-fadeIn">
+      <img src="photo.jpg" alt="Anand Nair" class="w-64 h-64 rounded-full border-4 border-blue-500 object-cover shadow-lg">
+      <div class="flex-1">
+        <h2 class="text-4xl font-bold mb-4 text-center md:text-left">About Me</h2>
+        <p class="text-lg mb-4">I'm Anand Nair, a driven undergraduate pursuing a BS in Computer Science and Mathematics with a minor in Physics at the University of Nebraska-Lincoln. My journey blends cutting-edge AI, quantum computing, and cosmic research to solve real-world challenges.</p>
+        <p class="text-lg mb-4">From founding an AI startup generating synthetic medical data to analyzing cosmic rays and building advanced neural networks, I excel in transforming complex ideas into impactful solutions. My work spans deep learning, quantum algorithms, and interdisciplinary projects that push technological boundaries.</p>
+        <p class="text-lg">Passionate about innovation, I balance technical expertise with creative problem-solving, always seeking opportunities to advance science and technology.</p>
+      </div>
     </div>
-  </section>
-  
-  <!-- Research Section -->
-  <section id="research">
-    <div class="container">
-      <h2>Research</h2>
-      <div class="research-content">
-        <div class="research-column">
-          <h3>Research Experiences</h3>
-          <ul>
-            <li><strong>Cosmic Ray Observatory Project:</strong> Installed detectors and analyzed cosmic ray air showers at the University of Nebraska-Lincoln.</li>
-            <li><strong>Yao Labs:</strong> Collected and analyzed Reddit data to study health trends and public sentiment using API integration and sentiment analysis.</li>
-            <li><strong>Fabrikant Labs:</strong> Simulated quantum tunneling effects and developed numerical models using Python and Qiskit to study electron behavior in nanoscale devices.</li>
-          </ul>
-        </div>
-        <div class="research-column">
-          <h3>Research Interests</h3>
-          <ul>
-            <li>Quantum Algorithms</li>
-            <li>Quantum Optimization</li>
-            <li>Deep Learning</li>
-            <li>Natural Language Processing</li>
-            <li>Computer Vision</li>
-            <li>Programming Languages</li>
-            <li>Quant Finance</li>
-             <li>Cryptography</li>
-          </ul>
-        </div>
+    <div class="container mx-auto px-6 mt-10 animate-fadeIn">
+      <h2 class="text-4xl font-bold mb-10 text-center">My Story & Vision</h2>
+      <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg shadow-lg">
+        <p class="text-lg mb-6">My fascination with science began at the age of 13 during my first high school physics class, where I was inspired by the inventions and contributions of Benjamin Franklin. Encouraged by a teacher who saw my potential and motivated me to pursue science with purpose, I began exploring far beyond the classroom. Since then, I’ve immersed myself in hackathons, research, and hands-on projects, always striving to blend rigorous theory with real-world experimentation.</p>
+        <p class="text-lg mb-6">I believe science is one of the few forces powerful enough to not only accelerate but also redefine civilization. I’m driven by the conviction that the next world-changing innovation is just one bold idea and one relentless experiment away. I’m committed not just to witnessing that future, but to being one of its principal architects.</p>
+        <p class="text-lg mb-6">I love reading biographies, tech articles, and startup stories. It inspires me a lot. I often play chess with friends to sharpen my strategic thinking. In my free time, I build personal projects, play video games, and occasionally share insights or explore new ideas through social media platforms like X and Instagram.</p>
+        <p class="text-lg">I strive to transcend the ordinary by deliberately avoiding the repetition of existing ideas and solutions. My passion lies in pioneering deep-tech innovations that confront unsolved challenges and have the potential to elevate humanity to entirely new heights.</p>
       </div>
     </div>
   </section>
-  
+
+  <!-- Education Section -->
+  <section id="education" class="bg-gray-50 py-20">
+    <div class="container mx-auto px-6 animate-fadeIn">
+      <h2 class="text-3xl font-bold mb-10 text-center">Education</h2>
+      <div class="max-w-3xl mx-auto">
+        <h3 class="text-2xl font-semibold mb-2">BS in Computer Science and Mathematics, Minor in Physics</h3>
+        <p class="text-lg mb-4">University of Nebraska-Lincoln</p>
+        <p class="text-md">Key Coursework: Data Structures and Algorithms, Embedded Systems, Quantum Computing, Differential Equations, Computer Organization, Robotics, Computer Systems Engineering, Physics I-III, Discrete Structures, Calculus I-III, Unix Programming, Electrical & Electronic Circuits, Linear Algebra.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="bg-white py-20">
+    <div class="container mx-auto px-6 animate-fadeIn">
+      <h2 class="text-3xl font-bold mb-10 text-center">Experience</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Undergraduate Research, Particle Physics & Cosmic Rays (CROP)</h3>
+          <p class="text-md mb-2">University of Nebraska-Lincoln | Aug 2024 – Present</p>
+          <ul class="list-disc ml-5 text-md">
+            <li>Studied cosmic ray air showers and high-energy cosmic particles.</li>
+            <li>Installed and operated detectors across Nebraska as part of an NSF-funded project; analyzed time-stamped data for cosmic ray coincidences.</li>
+            <li>Skills: Data analysis, scientific communication, teamwork.</li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Founder & CEO, Linagle AI</h3>
+          <p class="text-md mb-2">Synthetic Medical Data Generation Startup | Jun 2025 – Present</p>
+          <ul class="list-disc ml-5 text-md">
+            <li>Founded Linagle AI, focused on generating high-quality synthetic medical images for research and healthcare.</li>
+            <li>Designed and implemented deep learning pipelines for synthetic MRI, CT, and X-ray data generation.</li>
+            <li>Skills: Generative AI, synthetic data pipelines, entrepreneurship, leadership.</li>
+            <li>Visit: <a href="https://linagle.com" target="_blank" class="text-blue-500 hover:underline">linagle.com</a></li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Undergraduate Research Assistant, Yao Labs</h3>
+          <p class="text-md mb-2">School of Computing, UNL | Nov 2023 – May 2024</p>
+          <ul class="list-disc ml-5 text-md">
+            <li>Collected and analyzed Reddit health data using API integration.</li>
+            <li>Retrieved, cleaned, and processed data to study public health sentiment.</li>
+            <li>Skills: API integration, data analysis, NLP, Python, Pandas.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="text-2xl font-semibold mt-12 mb-4 text-center">Research Interests</h3>
+      <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8">
+        <ul class="list-disc ml-5 text-md space-y-2">
+          <li>Quantum Algorithms</li>
+          <li>Quantum Optimization</li>
+          <li>Deep Learning</li>
+          <li>Natural Language Processing</li>
+          <li>Computer Vision</li>
+          <li>Programming Languages</li>
+          <li>Quant Finance</li>
+          <li>Cryptography</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="projects-container">
-        <div class="project-card">
-          <h3>LitMiner</h3>
-          <p>AI-powered research literature analysis that processes thousands of papers to deliver expert-validated insights rapidly.</p>
+  <section id="projects" class="bg-gray-50 py-20">
+    <div class="container mx-auto px-6 animate-fadeIn">
+      <h2 class="text-3xl font-bold mb-10 text-center">Projects</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Brain Tumor Detection from MRI Images</h3>
+          <p class="text-md">Built a CNN with TensorFlow/Keras to detect brain tumors from MRI scans. Preprocessed images, applied data augmentation, and achieved strong accuracy. Skills: Deep learning, medical image analysis, Python, TensorFlow.</p>
         </div>
-        <div class="project-card">
-          <h3>Galaxy Evolution Study</h3>
-          <p>Analyzed redshift data from JWST to investigate galaxy morphology, star formation rates, and cosmic evolution.</p>
+        <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Song Lyrics Generator with LSTM</h3>
+          <p class="text-md">Developed an LSTM-based model to generate lyrics from a multi-genre dataset. Tokenized text, generated sequences, and trained model for natural language generation. Skills: NLP, LSTM, TensorFlow, Python.</p>
         </div>
-        <div class="project-card">
-          <h3>Mini Drone-Based Surveillance</h3>
-          <p>Designed a mini drone system with sensor integration and autonomous navigation for effective surveillance and data collection.</p>
+        <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">AI Research Agent Web App</h3>
+          <p class="text-md">Built a web-based AI research assistant using HTML, TailwindCSS, and JavaScript. Integrated Google Gemini API for real-time data retrieval and source citations. Skills: Web development, API integration, JavaScript.</p>
         </div>
-        <div class="project-card">
-          <h3>Academic Claim Analyzer</h3>
-          <p>Developed a semantic search engine that processes over 10,000 academic papers to match user queries with precise evidence.</p>
+        <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Fraud Detection Using Graph Neural Networks</h3>
+          <p class="text-md">Built a GNN to detect fraudulent credit card transactions using graph-based feature engineering. Constructed transaction graphs, trained GNN models, and evaluated with metrics. Skills: GNNs, PyTorch, NetworkX, Python.</p>
         </div>
-        <div class="project-card">
-          <h3>LSTM-Jupyter Notebook</h3>
-          <p>Engineered an LSTM neural network for precision irrigation scheduling by integrating meteorological and soil data.</p>
+        <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">CNN for CIFAR-10 Image Classification</h3>
+          <p class="text-md">Designed and trained a CNN to classify CIFAR-10 dataset images with 72% accuracy. Implemented convolution, pooling, and dense layers with performance visualization. Skills: CNN, TensorFlow, Python, NumPy, Matplotlib.</p>
         </div>
-        <div class="project-card">
-          <h3>LLM Orchestrator</h3>
-          <p>Created an asynchronous Python interface for managing multiple LLM APIs, streamlining AI model integration.</p>
+        <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Galaxy Evolution Study Using JWST Data</h3>
+          <p class="text-md">Analyzed galaxy data from JWST to study morphology, star formation, and redshift evolution. Skills: Astrophysics research, Python (Astropy), data analysis.</p>
         </div>
-        <div class="project-card">
-          <h3>Log Gantry Repository</h3>
-          <p>Designed a Python-based GUI for a log scanner with integrated data processing and simulation features.</p>
+        <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Mini Drone-Based Surveillance System</h3>
+          <p class="text-md">Designed a conceptual framework for drone navigation, obstacle detection, and data collection. Skills: Drone system design, sensor integration, documentation.</p>
         </div>
-        <div class="project-card">
-          <h3>Coin Picking Robot</h3>
-          <p>Developed an autonomous and remote-controlled coin picking robot using microcontrollers and wireless communication.</p>
+        <div class="bg-white p-6 rounded-lg shadow-md hover-scale">
+          <h3 class="text-xl font-semibold mb-2">Coin Picking Robot</h3>
+          <p class="text-md">Designed autonomous and remote controls for a robot using STM32, EFM8, and Xbox controller. Implemented nRF24L01 transceivers for communication and autonomous movement logic.</p>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- Resume Section -->
-  <section id="resume">
-    <div class="container">
-      <h2>Resume</h2>
-      <p>For a detailed overview of my education, experience, and projects, please view my resume.</p>
-      <a href="Anand's CV.pdf" target="_blank" class="btn">Download Resume</a>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="bg-white py-20">
+    <div class="container mx-auto px-6 animate-fadeIn">
+      <h2 class="text-3xl font-bold mb-10 text-center">Achievements</h2>
+      <h3 class="text-2xl font-semibold mb-4 text-center">Publications</h3>
+      <div class="max-w-3xl mx-auto bg-gray-50 p-6 rounded-lg shadow-md mb-10">
+        <p class="text-lg">A Modular Feedback Framework for Escaping Barren Plateaus in Variational Quantum Algorithms (ICQIST, 2025)</p>
+      </div>
+      <h3 class="text-2xl font-semibold mb-4 text-center">Certifications & Training</h3>
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-10">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-certificate text-blue-500 text-2xl mr-4"></i>
+          <p class="text-md">IBM Professional Machine Learning Engineer</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-certificate text-blue-500 text-2xl mr-4"></i>
+          <p class="text-md">AI on NVIDIA Jetson Nano Certification</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-certificate text-blue-500 text-2xl mr-4"></i>
+          <p class="text-md">Quantum Fundamentals and Computing – Q-CTRL</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-certificate text-blue-500 text-2xl mr-4"></i>
+          <p class="text-md">Oracle Cloud AI Professional Certification (In Progress)</p>
+        </div>
+      </div>
+      <h3 class="text-2xl font-semibold mb-4 text-center">Honors and Awards</h3>
+      <div class="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-trophy text-yellow-500 text-2xl mr-4"></i>
+          <p class="text-md">Appreciation from NASA for Galaxy Collision project proposal.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-trophy text-yellow-500 text-2xl mr-4"></i>
+          <p class="text-md">Gold Medal from Indian Vice President M. Venkaiah Naidu for Bigilla robo-drone system.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-trophy text-yellow-500 text-2xl mr-4"></i>
+          <p class="text-md">Winner, Science Quiz Competition by Manorama magazine.</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-trophy text-yellow-500 text-2xl mr-4"></i>
+          <p class="text-md">Adi Shankara Young Scientist Award (2019).</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-trophy text-yellow-500 text-2xl mr-4"></i>
+          <p class="text-md">State-Level Champion, BigQ Challenge (2019).</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md hover-scale flex items-center">
+          <i class="fas fa-trophy text-yellow-500 text-2xl mr-4"></i>
+          <p class="text-md">Global Laureate Scholarship, Emerging Leaders Scholarship.</p>
+        </div>
+      </div>
     </div>
   </section>
-  
+
+  <!-- Technologies Section -->
+  <section id="technologies" class="bg-gray-50 py-20">
+    <div class="container mx-auto px-6 animate-fadeIn">
+      <h2 class="text-3xl font-bold mb-10 text-center">Technologies</h2>
+      <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-semibold mb-2">Languages:</h3>
+        <p class="text-md mb-4">C++, C, Java, Python, HTML, CSS, Qiskit</p>
+        <h3 class="text-xl font-semibold mb-2">Frameworks/Tools:</h3>
+        <p class="text-md">TensorFlow, LangChain, Keras, Oracle Cloud, OpenCV, PyTorch, Pandas, Matplotlib, Seaborn, NumPy, Astropy, GitHub, APIs, Microsoft SQL, Scientific hardware integration (scintillation counters, GPS systems)</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>If you’d like to connect or learn more about my work, feel free to reach out:</p>
-      <p>Email: <a href="mailto:anair6@huskers.unl.edu">anair6@huskers.unl.edu</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/anand-nair-98aa95328/" target="_blank">Anand Nair</a></p>
-      <p>GitHub: <a href="https://github.com/AnandNair369" target="_blank">AnandNair369</a></p>
+  <section id="contact" class="bg-white py-20">
+    <div class="container mx-auto px-6 text-center animate-fadeIn">
+      <h2 class="text-3xl font-bold mb-10">Contact</h2>
+      <p class="text-lg mb-6">Let's connect! Reach out for collaborations, opportunities, or discussions.</p>
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="mailto:anair6@huskers.unl.edu" class="text-blue-500 hover:text-blue-700"><i class="fas fa-envelope text-3xl"></i></a>
+        <a href="https://www.linkedin.com/in/anand-nair-98aa95328/" target="_blank" class="text-blue-500 hover:text-blue-700"><i class="fab fa-linkedin text-3xl"></i></a>
+        <a href="https://github.com/AnandNair369" target="_blank" class="text-blue-500 hover:text-blue-700"><i class="fab fa-github text-3xl"></i></a>
+      </div>
+      <p class="text-md mb-4">Phone: (312) 375 2391</p>
+      <a href="MyResume.pdf" target="_blank" class="bg-blue-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 transition">Download Resume</a>
     </div>
   </section>
-  
+
   <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Anand. All rights reserved.</p>
-    </div>
+  <footer class="bg-gray-800 text-white py-6 text-center">
+    <p>&copy; 2025 Anand Nair. All rights reserved.</p>
   </footer>
 </body>
 </html>
-
-
